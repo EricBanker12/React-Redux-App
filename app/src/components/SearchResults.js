@@ -14,11 +14,11 @@ function SearchResults() {
 
     return (
         <>
-            <section>
+            <section className="col-sm-9 mx-auto">
                 {data.results.map(drug => <DrugHeader key={drug.id} drug={drug} />)}
             </section>
-            <footer>
-                <p>Disclaimer: {data.meta.disclaimer}</p>
+            <footer className="col-sm-9 mx-auto">
+                <p className="text-danger">Disclaimer: {data.meta.disclaimer}</p>
             </footer>
         </>
     )

@@ -13,7 +13,7 @@ export const searchActionCreator = query => dispatch => {
             dispatch({type: SEARCH_SUCCESS, payload: resp.data})
         })
         .catch(err => {
-            console.error(err)
-            dispatch({type: SEARCH_FAILURE})
+            console.error(err.message)
+            dispatch({type: SEARCH_FAILURE, payload: err.message})
         })
 }

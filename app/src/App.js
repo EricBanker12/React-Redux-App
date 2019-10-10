@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 
 import reducer from './reducers'
 import SearchForm from './components/SearchForm'
+import SearchResults from './components/SearchResults';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Provider store={state}>
         <SearchForm />
+        <SearchResults />
       </Provider>
     </div>
   );

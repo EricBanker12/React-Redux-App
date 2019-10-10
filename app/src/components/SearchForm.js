@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { searchActionCreator } from '../actions'
+
 function SearchForm() {
     const dispatch = useDispatch()
     const { loading, error } = useSelector(({loading, error})=>({loading, error}))
@@ -10,7 +12,7 @@ function SearchForm() {
     function submitHandler(e) {
         e.preventDefault()
         if (!loading) {
-            // send action
+            dispatch(searchActionCreator(search))
         }
     }
 

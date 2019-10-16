@@ -13,14 +13,9 @@ function SearchResults() {
     if (error) return <div>{error}</div>
 
     return (
-        <>
-            <section className="col-sm-9 mx-auto">
-                {data.results.map(drug => <DrugHeader key={drug.id} drug={drug} />)}
-            </section>
-            <footer className="col-sm-9 mx-auto">
-                <p className="text-danger">Disclaimer: {data.meta.disclaimer}</p>
-            </footer>
-        </>
+        <section className="col-sm-9 mx-auto">
+            {data.results.map(drug => <DrugHeader key={drug.id} drug={drug} />)}
+        </section>
     )
 }
 

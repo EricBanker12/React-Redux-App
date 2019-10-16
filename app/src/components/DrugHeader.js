@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'reactstrap'
+import { Card, CardHeader, CardBody } from 'reactstrap'
 
 import DrugInfo from './DrugInfo'
 
@@ -10,11 +10,16 @@ function DrugHeader(props) {
     if (!openfda || !openfda.brand_name) return <div></div>
 
     return (
-        <Card className="p-2 mt-3" style={{cursor:'pointer'}} onClick={()=>{setShowMore(!showMore)}}>
-            <h4>Brand Name(s): {openfda.brand_name.map((name, i) => <span key={i}>{name}</span>)}</h4>
-            <p>Generic Name(s): {openfda.generic_name.map((name, i) => <span key={i}>{name}</span>)}</p>
-            <p>Manufacturer(s): {openfda.manufacturer_name.map((name, i) => <span key={i}>{name}</span>)}</p>
-            {showMore?<DrugInfo drug={props.drug} />:''}
+        <Card className="mt-3" style={{cursor:'pointer'}} onClick={()=>{setShowMore(!showMore)}}>
+            <CardHeader>
+                <h4>{openfda.brand_name.map((name, i) => <span key={i}>{name}</span>)}</h4>
+            </CardHeader>
+            <CardBody>
+                <p>Generic Name(s): {openfda.generic_name.map((name, i) => <span key={i}>{name}</span>)}</p>
+                <p>Manufacturer(s): {openfda.manufacturer_name.map((name, i) => <span key={i}>{name}</span>)}</p>
+                <p>Product Type: {openfda.product_type.map((name, i) => <span key={i}>{name}</span>)}</p>
+                <p>Administration Route: {openfda.route.map((name, i) => <span key={i}>{name}</span>)}</p>
+            </CardBody>
         </Card>
     )
 }

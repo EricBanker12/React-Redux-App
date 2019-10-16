@@ -1,7 +1,7 @@
 import {START_SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE} from '../actions'
 
 const initState = {
-    // query: '',
+    query: '',
     loading: false,
     data: {},
     error: ''
@@ -13,6 +13,7 @@ function reducer(state = initState, action) {
             return {
                 ...state,
                 loading: true,
+                query: action.payload,
             }
         case SEARCH_SUCCESS:
             return {

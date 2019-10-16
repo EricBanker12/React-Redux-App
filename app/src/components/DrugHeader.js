@@ -20,6 +20,7 @@ function DrugHeader(props) {
                 <p>Product Type: {openfda.product_type.map((name, i) => <span key={i}>{name}</span>)}</p>
                 <p>Administration Route: {openfda.route.map((name, i) => <span key={i}>{name}</span>)}</p>
             </CardBody>
+            <DrugInfo {...{drug: props.drug, showMore, setShowMore}} />
         </Card>
     )
 }

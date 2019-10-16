@@ -27,6 +27,7 @@ function SearchForm() {
                     placeholder='Search (brand, generic, or substance name)'
                     title='Search by brand, generic, or substance name'
                     value={search}
+                    required
                     onChange={e=>{setSearch(e.target.value)}}
                 />
                 <Button className="btn-info col-2">Search</Button>

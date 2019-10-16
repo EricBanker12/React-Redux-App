@@ -10,7 +10,7 @@ function DrugHeader(props) {
     if (!openfda || !openfda.brand_name) return <div></div>
 
     return (
-        <Card className="mt-3" style={{cursor:'pointer'}} onClick={()=>{setShowMore(!showMore)}}>
+        <Card className="mt-3" style={{cursor:'pointer'}} onClick={()=>{setShowMore(true)}}>
             <CardHeader>
                 <h4>{openfda.brand_name.map((name, i) => <span key={i}>{name}</span>)}</h4>
             </CardHeader>

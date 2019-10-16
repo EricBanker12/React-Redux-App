@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import reducer from './reducers'
+import Disclaimer from './components/Disclaimer'
 import SearchForm from './components/SearchForm'
 import SearchResults from './components/SearchResults';
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Provider store={state}>
+        <Disclaimer />
         <SearchForm />
         <SearchResults />
       </Provider>

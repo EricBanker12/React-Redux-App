@@ -6,7 +6,7 @@ import { searchActionCreator } from '../actions'
 
 function SearchForm() {
     const dispatch = useDispatch()
-    const { loading, error } = useSelector(({loading, error})=>({loading, error}))
+    const { loading } = useSelector(({loading})=>({loading}))
 
     const [search, setSearch] = React.useState('')
 

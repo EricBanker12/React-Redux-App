@@ -18,3 +18,17 @@ export const searchActionCreator = query => dispatch => {
             dispatch({type: SEARCH_FAILURE, payload: err.message})
         })
 }
+
+export const queryActionCreator = query => dispatch => {
+    if (!query) return
+    dispatch({type: START_SEARCH, payload: query})
+    axios.get(query)
+        .then(resp => {
+            console.log(resp)
+            dispatch({type: SEARCH_SUCCESS, payload: resp.data})
+        })
+        .catch(err => {
+            console.error(err.message)
+            dispatch({type: SEARCH_FAILURE, payload: err.message})
+        })
+}

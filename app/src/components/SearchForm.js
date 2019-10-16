@@ -19,13 +19,13 @@ function SearchForm() {
 
     return (
         <Form className="col-sm-6 text-center mx-auto" onSubmit={submitHandler}>
-            <h1>Drug Search</h1>
+            <h1>OpenFDA Drug Label Search</h1>
             <Row>
                 <Input
                     className="col-10"
                     type='text'
-                    placeholder='Search'
-                    title='Search by drug brand name, generic name, or ingredient'
+                    placeholder='Search (brand, generic, or substance name)'
+                    title='Search by brand, generic, or substance name'
                     value={search}
                     onChange={e=>{setSearch(e.target.value)}}
                 />
